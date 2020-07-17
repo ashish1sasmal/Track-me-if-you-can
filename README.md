@@ -1,6 +1,6 @@
 # Track-me-if-you-can
-#### Track me if you can is a very powerfull object tracker, just at a mouse click! 
-<h3><b>This python script supports this following object tracking algorithms : </b></h3>
+### Track me if you can is a very powerfull object tracker, just at a mouse click! 
+<h4><b>This python script supports this following object tracking algorithms : </b></h4>
 <ol>
  <li><b>BOOSTING Tracker</b></li>
  <li><b>MIL Tracker</b></li>
