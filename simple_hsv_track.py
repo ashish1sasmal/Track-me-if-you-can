@@ -6,7 +6,7 @@ import imutils
 
 
 cv2.namedWindow("Track",cv2.WINDOW_NORMAL)
-# cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture("pool.mp4")
 ret = False
 lower=0
 upper=0
@@ -51,16 +51,17 @@ def object(hsv):
         return frame
 
 while True:
-    frame = live()
+    # frame = live()
+    rete, frame = cap.read()
     frame = cv2.GaussianBlur(frame, (5, 5), 0)
     hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
-    # ret, frame = cap.read()
+
 
     if ret:
         frame = object(hsv)
     cv2.imshow("Track",frame)
 
-    key = cv2.waitKey(1) & 0xFF
+    key = cv2.waitKey(50) & 0xFF
     if key == ord("q"):
         break
 
