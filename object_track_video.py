@@ -31,7 +31,7 @@ tracker = OPENCV_OBJECT_TRACKERS[sys.argv[1]]()
 
 initBB = None
 
-vs = cv2.VideoCapture("car2.mp4")
+vs = cv2.VideoCapture("drone.mp4")
 
 fps = None
 
@@ -44,13 +44,13 @@ while True:
 	# print(frame)
 	frame = imutils.resize(frame,width=500)
 	(H, W) = frame.shape[:2]
-	cv2.line(frame,(123,165),(420,222),(255,0,0),2)
+	# cv2.line(frame,(238,167),(262,167),(255,0,0),2)
 	if initBB is not None:
 		(success,box) = tracker.update(frame)
 		if success:
 			(x,y,w,h) = [int(v) for v in box]
 
-			if chk([154,190],[420,222],[x,y]):
+			if chk([238,67],[262,67],[x,y]):
 				cv2.rectangle(frame,(x,y),(x+w,y+h),(0,0,255),2)
 			else:
 				cv2.rectangle(frame,(x,y),(x+w,y+h),(0,255,0),2)
